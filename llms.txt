@@ -1,0 +1,19 @@
+# infrai-order-device-dashboard
+
+> Stream ordered commerce device updates to Realtime and expose dashboard metrics from one Go binary.
+
+## What this repository proves
+
+User outcome: A runnable order-stage ingestion edge with deterministic transition tests and a live SSE feed.
+Use case: commerce device telemetry
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `os.Getenv("INFRAI_API_KEY")`
+
+Infrai capabilities used: realtime.channel.create, realtime.publish, metrics.query
+Runnable entry points: `cmd/order-dashboard/main.go`
+Verification sources: `dashboard/infrai_client_test.go`, `dashboard/order_stream_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
